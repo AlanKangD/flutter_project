@@ -120,6 +120,25 @@ class MisoFirstPage extends StatelessWidget {
                   ),
                 ],
               ),
+              Positioned(
+                bottom: 32,
+                child: GestureDetector(
+                  onTap: () {
+                    print("서비스 상세 정보ㅓ 클릭 됨");
+                  },
+                  child: Container(
+                    color: Colors.white.withOpacity(0.3),
+                    padding: EdgeInsets.all(12),
+                    child: Text(
+                      "서비스 상세정보",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
