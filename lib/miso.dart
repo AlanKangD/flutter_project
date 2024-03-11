@@ -83,6 +83,41 @@ class MisoFirstPage extends StatelessWidget {
                   SizedBox(
                     height: 38,
                   ),
+                  GestureDetector(
+                    onTap: () {
+                      print("+ 예약하기 버튼 클릭 됨");
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16,
+                        horizontal: 24,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(64),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: misoPrimaryColor,
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "예약하기",
+                            style: TextStyle(
+                              color: misoPrimaryColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
