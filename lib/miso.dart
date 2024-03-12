@@ -212,6 +212,30 @@ class MisoSecondPage extends StatelessWidget {
                   ],
                 ),
               ),
+
+              //예약하기
+              Positioned(
+                  bottom: 18,
+                  left: 24,
+                  right: 24,
+                  child: GestureDetector(
+                    onTap: () {
+                      print('예약하기 클릭 됨');
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 58,
+                      color: misoPrimaryColor,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "예약하기",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ))
             ],
           )),
     ));
