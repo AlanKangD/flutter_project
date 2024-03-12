@@ -154,10 +154,30 @@ class MisoSecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Miso 두 번째 페이지"),
-      ),
-    );
+        body: SafeArea(
+      child: SizedBox(
+          width: double.infinity,
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+                    Text(
+                      "예약내역",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )),
+    ));
   }
 }
 
