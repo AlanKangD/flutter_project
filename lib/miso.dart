@@ -270,6 +270,67 @@ class MisoThirdPage extends StatelessWidget {
                     child: Image.network(backgroundImgUrl),
                   ),
                 ),
+
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 64,
+                    ),
+
+                    // 타이틀
+                    // Tip : 10,000원만 bold 처리하기 위해 RichText 위젯 사용
+                    RichText(
+                      text: TextSpan(
+                        // 공통 text 스타일
+                        style: TextStyle(
+                          fontSize: 28,
+                          height: 1.5,
+                          color: Colors.white,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: "친구 추천할 때마다\n",
+                          ),
+                          TextSpan(
+                            text: "10,000원",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "할인 쿠폰 지급!",
+                          )
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 64,
+                    ),
+
+                    GestureDetector(
+                      onTap: () {
+                        print("자세히 보기 클릭 됨!");
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "자세히 보기",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
