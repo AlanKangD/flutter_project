@@ -253,10 +253,27 @@ class MisoThirdPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Miso 세 번째 페이지"),
-      ),
-    );
+        backgroundColor: misoPrimaryColor,
+        body: SafeArea(
+          child: SizedBox(
+            width: double.infinity,
+            child: Stack(
+              // Tip : 친구 추천하기 버튼에 width를 주지 않고 중앙 정렬하기
+              alignment: Alignment.center,
+              children: [
+                //배경 이미지
+                Positioned(
+                  bottom: 0,
+                  child: Container(
+                    // 이미지 최대 크기 제한
+                    constraints: BoxConstraints(maxWidth: 400),
+                    child: Image.network(backgroundImgUrl),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
 
