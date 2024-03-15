@@ -98,11 +98,28 @@ class StarbucksFirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Text("Starbucks 첫 번째 페이지"),
-      ),
-    );
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: [
+            CustomScrollView(
+              slivers: [
+                SliverAppBar(
+                  flexibleSpace: FlexibleSpaceBar(
+                    background: Stack(
+                      children: [
+                        Positioned.fill(
+                            child: Image.network(
+                          backImg,
+                          fit: BoxFit.fill,
+                        ))
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
+        ));
   }
 }
 
