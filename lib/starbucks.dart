@@ -104,7 +104,9 @@ class StarbucksFirstPage extends StatelessWidget {
             CustomScrollView(
               slivers: [
                 SliverAppBar(
+                  //스크롤시 사라지는 영역
                   flexibleSpace: FlexibleSpaceBar(
+                    collapseMode: CollapseMode.pin,
                     background: Stack(
                       children: [
                         Positioned.fill(
