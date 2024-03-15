@@ -99,11 +99,21 @@ class StarbucksFirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
+
+        // 우측 하단에 Deliverys 아이콘을 띄우기 위해 Stack으로 구현
         body: Stack(
           children: [
             CustomScrollView(
               slivers: [
+                // Tip : 스크롤시 배경이 사라지게 만들면 SliverAppBar 위젯을 사용하면 됩니다.
                 SliverAppBar(
+                  automaticallyImplyLeading: false, // 뒤로가기 버튼 숨기기
+                  pinned: true, // 스크롤시 bottom 영역을 화면 상단에 남길지 여부
+                  snap: false, // 중간에 멈출 때 자동으로 AppBar를 펼쳐서 배경을 모두 보여줄지
+                  floating: true, // AppBar를 화면에 띄울지, 아니면 컬럼처럼 최 상단에 놓을지
+                  expandedHeight: 252, // 최대 확장되었을때 높이
+                  backgroundColor: Colors.white,
+
                   //스크롤시 사라지는 영역
                   flexibleSpace: FlexibleSpaceBar(
                     collapseMode: CollapseMode.pin,
