@@ -123,7 +123,25 @@ class StarbucksFirstPage extends StatelessWidget {
                             child: Image.network(
                           backImg,
                           fit: BoxFit.fill,
-                        ))
+                        )),
+
+                        // 배경 위 위젯
+                        Positioned(
+                            left: 24,
+                            right: 24,
+                            bottom: 100,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "한 해의 마무리. \n수고만았어요💖",
+                                  style: TextStyle(
+                                    fontSize: 28,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )
+                              ],
+                            ))
                       ],
                     ),
                   ),
