@@ -345,7 +345,7 @@ class StarbucksFirstPage extends StatelessWidget {
                           ),
                           children: [
                             TextSpan(
-                              text: "이찬호",
+                              text: "강동원",
                               style: TextStyle(
                                 color: starbucksAccentColor,
                               ),
