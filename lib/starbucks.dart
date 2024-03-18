@@ -394,6 +394,42 @@ class StarbucksFirstPage extends StatelessWidget {
               )
             ],
           ),
+          Positioned(
+              bottom: 18,
+              right: 24,
+              child: GestureDetector(
+                onTap: () => print("Deliverys 클릭 됨"),
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                  decoration: BoxDecoration(
+                    color: starbucksPrimaryColor,
+                    borderRadius: BorderRadius.circular(64),
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Deliverys",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Icon(
+                        Icons.pedal_bike_outlined,
+                        color: Colors.white,
+                        size: 28,
+                      )
+                    ],
+                  ),
+                ),
+              ))
         ],
       ),
     );
