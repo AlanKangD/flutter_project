@@ -120,6 +120,7 @@ class StarbucksFirstPage extends StatelessWidget {
                   background: Stack(
                     children: [
                       Positioned.fill(
+                        bottom: 60,
                         child: Image.network(
                           backImg,
                           fit: BoxFit.fill,
@@ -130,7 +131,7 @@ class StarbucksFirstPage extends StatelessWidget {
                       Positioned(
                         left: 24,
                         right: 24,
-                        bottom: 40, // 60
+                        bottom: 60, // 60
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -145,6 +146,7 @@ class StarbucksFirstPage extends StatelessWidget {
                               height: 32,
                             ),
                             Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Expanded(
                                   child: Column(
@@ -160,7 +162,7 @@ class StarbucksFirstPage extends StatelessWidget {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: 14,
+                                        height: 16,
                                       ),
                                       ClipRRect(
                                         borderRadius: BorderRadius.all(
@@ -217,6 +219,68 @@ class StarbucksFirstPage extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+
+                bottom: PreferredSize(
+                  preferredSize: Size.fromHeight(52),
+                  child: Container(
+                    height: 52,
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 24,
+                        right: 12,
+                      ),
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () => print("What's New 클릭 됨"),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.mail_outline,
+                                  color: Colors.grey,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  "What's New",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: 32,
+                          ),
+                          GestureDetector(
+                            onTap: () => print("Coupon 클릭 됨"),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.confirmation_num_outlined,
+                                  color: Colors.grey,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  "Coupon",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Spacer(),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
