@@ -375,7 +375,20 @@ class StarbucksFirstPage extends StatelessWidget {
                           );
                         },
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 18,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.network(eventImg),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 32,
+                    ),
                   ],
                 ),
               )
