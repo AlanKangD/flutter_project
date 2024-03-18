@@ -278,6 +278,22 @@ class StarbucksFirstPage extends StatelessWidget {
                             ),
                           ),
                           Spacer(),
+                          Stack(
+                            children: [
+                              Icon(
+                                Icons.notifications_on_outlined,
+                                color: Colors.grey,
+                                size: 32,
+                              ),
+                              Positioned(
+                                  right: 2,
+                                  top: 2,
+                                  child: CircleAvatar(
+                                    radius: 5,
+                                    backgroundColor: starbucksPrimaryColor,
+                                  ))
+                            ],
+                          )
                         ],
                       ),
                     ),
