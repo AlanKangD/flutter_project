@@ -98,58 +98,133 @@ class StarbucksFirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
 
-        // 우측 하단에 Deliverys 아이콘을 띄우기 위해 Stack으로 구현
-        body: Stack(
-          children: [
-            CustomScrollView(
-              slivers: [
-                // Tip : 스크롤시 배경이 사라지게 만들면 SliverAppBar 위젯을 사용하면 됩니다.
-                SliverAppBar(
-                  automaticallyImplyLeading: false, // 뒤로가기 버튼 숨기기
-                  pinned: true, // 스크롤시 bottom 영역을 화면 상단에 남길지 여부
-                  snap: false, // 중간에 멈출 때 자동으로 AppBar를 펼쳐서 배경을 모두 보여줄지
-                  floating: true, // AppBar를 화면에 띄울지, 아니면 컬럼처럼 최 상단에 놓을지
-                  expandedHeight: 252, // 최대 확장되었을때 높이
-                  backgroundColor: Colors.white,
+      // 우측 하단에 Deliverys 아이콘을 띄우기 위해 Stack으로 구현
+      body: Stack(
+        children: [
+          CustomScrollView(
+            slivers: [
+              // Tip : 스크롤시 배경이 사라지게 만들면 SliverAppBar 위젯을 사용하면 됩니다.
+              SliverAppBar(
+                automaticallyImplyLeading: false, // 뒤로가기 버튼 숨기기
+                pinned: true, // 스크롤시 bottom 영역을 화면 상단에 남길지 여부
+                snap: false, // 중간에 멈출 때 자동으로 AppBar를 펼쳐서 배경을 모두 보여줄지
+                floating: true, // AppBar를 화면에 띄울지, 아니면 컬럼처럼 최 상단에 놓을지
+                expandedHeight: 252, // 최대 확장되었을때 높이
+                backgroundColor: Colors.white,
 
-                  //스크롤시 사라지는 영역
-                  flexibleSpace: FlexibleSpaceBar(
-                    collapseMode: CollapseMode.pin,
-                    background: Stack(
-                      children: [
-                        Positioned.fill(
-                            child: Image.network(
+                //스크롤시 사라지는 영역
+                flexibleSpace: FlexibleSpaceBar(
+                  collapseMode: CollapseMode.pin,
+                  background: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Image.network(
                           backImg,
                           fit: BoxFit.fill,
-                        )),
+                        ),
+                      ),
 
-                        // 배경 위 위젯
-                        Positioned(
-                            left: 24,
-                            right: 24,
-                            bottom: 100,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                      // 배경 위 위젯
+                      Positioned(
+                        left: 24,
+                        right: 24,
+                        bottom: 40, // 60
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "한 해의 마무리, \n수고 많았어요🥰",
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 32,
+                            ),
+                            Row(
                               children: [
-                                Text(
-                                  "한 해의 마무리. \n수고만았어요💖",
-                                  style: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold,
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "11 ⭐️ until next Reward",
+                                        style: TextStyle(
+                                          color: starbucksAccentColor,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 14,
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                        child: LinearProgressIndicator(
+                                          backgroundColor:
+                                              Colors.grey.withOpacity(0.2),
+                                          value: 0.083,
+                                          minHeight: 10,
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                                  starbucksAccentColor),
+                                        ),
+                                      ),
+                                    ],
                                   ),
+                                ),
+                                SizedBox(
+                                  width: 16,
+                                ),
+                                RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        fontSize: 28,
+                                        color: Colors.black,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: "1",
+                                          style: TextStyle(
+                                            fontSize: 28,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: " / ",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: "12 ⭐️",
+                                          style: TextStyle(
+                                            color: starbucksAccentColor,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ]),
                                 )
                               ],
-                            ))
-                      ],
-                    ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                )
-              ],
-            )
-          ],
-        ));
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 
