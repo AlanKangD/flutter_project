@@ -569,36 +569,69 @@ class StarbucksThirdPage extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            "Order",
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              "Order",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            backgroundColor: Colors.white,
+            actions: [
+              IconButton(
+                onPressed: () {
+                  print("Order 우측 상단 아이콘 클릭 됨");
+                },
+                icon: Icon(
+                  Icons.search_outlined,
+                  color: Colors.grey,
+                ),
+              )
+            ],
+            bottom: TabBar(
+              isScrollable: false,
+              indicatorColor: starbucksPrimaryColor,
+              indicatorWeight: 4,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey,
+              labelStyle: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+              tabs: [
+                Tab(text: "전체 메뉴"),
+                Tab(text: "나만의 메뉴"),
+                Tab(text: "🎂 홀케이크"),
+              ],
             ),
           ),
-          backgroundColor: Colors.white,
-          actions: [
-            IconButton(
-              onPressed: () {
-                print("Order 우측 상단 아이콘 클릭 됨");
+          body: TabBarView(children: [
+            ListView.builder(
+              itemBuilder: (context, index) {
+                final item = menu[index % menu.length];
+                final ko = item["ko"] ?? "제목";
+                final en = item["en"] ?? "title";
+                final imgUrl = item["imgUrl"] ?? "";
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16,
+                    horizontal: 21,
+                  ),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 52,
+                        backgroundImage: NetworkImage(imgUrl),
+                        backgroundColor: Colors.transparent,
+                      )
+                    ],
+                  ),
+                );
               },
-              icon: Icon(
-                Icons.search_outlined,
-                color: Colors.grey,
-              ),
-            )
-          ],
-          bottom: TabBar(tabs: [
-            Tab(text: "전체 메뉴"),
-            Tab(
-              text: "나만의 메뉴",
             ),
-            Tab(text: "🎂 홀케이크"),
-          ]),
-        ),
-      ),
+          ])),
     );
   }
 }
